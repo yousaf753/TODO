@@ -3,8 +3,7 @@
 A new Flutter application.
 
 ## Getting Started
-![Screenshot_20210109-170136](https://user-images.githubusercontent.com/72139490/104091054-c5181e00-529c-11eb-8fb0-d4ffcd820dbb.jpg)
-![Screenshot_20210109-170213](https://user-images.githubusercontent.com/72139490/104091061-cb0dff00-529c-11eb-9fbb-385b6bcc12e1.jpg)
+![Screenshot_20210109-170136](https://user-images.githubusercontent.com/72139490/104091054-c5181e00-529c-11eb-8fb0-d4ffcd820dbb.jpg)![Screenshot_20210109-170213](https://user-images.githubusercontent.com/72139490/104091061-cb0dff00-529c-11eb-9fbb-385b6bcc12e1.jpg)
 ![Screenshot_20210109-170147](https://user-images.githubusercontent.com/72139490/104091064-cea18600-529c-11eb-9450-903f61895604.jpg)
 ![Screenshot_20210109-170219](https://user-images.githubusercontent.com/72139490/104091085-dfea9280-529c-11eb-9a44-c89a34d3968e.jpg)
 ![Screenshot_20210109-170254](https://user-images.githubusercontent.com/72139490/104091078-da8d4800-529c-11eb-9864-69d8f9ee213c.jpg)
