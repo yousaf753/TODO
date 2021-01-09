@@ -4,7 +4,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'main.dart';
-void main() => runApp(loginScreen());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 class loginScreen extends StatelessWidget {
   loginScreen(){
     BuildContext context;
@@ -138,18 +142,7 @@ class loginScreen extends StatelessWidget {
   void _getPassword(){
     password = passwordController.text.toString();
   }
-  Future<void> signOutGoogle() async {
-
-    Firebase.initializeApp();
-
-    final GoogleSignIn googleSignIn = GoogleSignIn();
-    await googleSignIn.signOut();
-
-    print("User Signed Out");
-  }
   Future<void> registerUser(context) async{
-
-    Firebase.initializeApp();
     _getEmail();
     _getPassword();
     final FirebaseAuth _auth = FirebaseAuth.instance;

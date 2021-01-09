@@ -68,6 +68,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 ),
                 TextField(
                   onChanged: (text) {
+
                     setState(() => newTask = text);
                   },
                   cursorColor: taskColor,
