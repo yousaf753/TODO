@@ -13,6 +13,7 @@ import 'package:todo/page/detail_screen.dart';
 import 'package:todo/component/todo_badge.dart';
 import 'package:todo/page/privacy_policy.dart';
 import 'package:todo/model/data/choice_card.dart';
+import 'package:analog_clock/analog_clock.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -141,29 +142,51 @@ class _MyHomePageState extends State<MyHomePage>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             // ShadowImage(),
-                            Container(
-                              // margin: EdgeInsets.only(top: 22.0),
-                              child: Text(
-                                '${widget.currentDay(context)}',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline
-                                    .copyWith(color: Colors.white),
-                              ),
-                            ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text(
-                                  '${DateTimeUtils.currentDate} ${DateTimeUtils.currentMonth}',
-                                  style: Theme.of(context).textTheme.title.copyWith(
-                                      color: Colors.white.withOpacity(0.7)),
-                                ),
-
-
+                                Expanded(child: Column(
+                                  children: [
+                                    Container(
+                                      // margin: EdgeInsets.only(top: 22.0),
+                                      child: Text(
+                                        '${widget.currentDay(context)}',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                        // ignore: deprecated_member_use
+                                            .headline
+                                            .copyWith(color: Colors.white),
+                                      ),
+                                    ),
+                                    Text(
+                                      '${DateTimeUtils.currentDate} ${DateTimeUtils.currentMonth}',
+                                      // ignore: deprecated_member_use
+                                      style: Theme.of(context).textTheme.title.copyWith(
+                                          color: Colors.white.withOpacity(0.7)),
+                                    ),
+                                  ],
+                                )),
+                                Expanded(child:    Container(
+                                  height: 100,
+                                  width: 100,
+                                  child: AnalogClock(decoration: BoxDecoration(
+                                      border: Border.all(width: 2.0, color: Colors.black),
+                                      color: Colors.transparent,
+                                      shape: BoxShape.circle),
+                                    width: 150.0,
+                                    isLive: true,
+                                    hourHandColor: Colors.black,
+                                    minuteHandColor: Colors.black,
+                                    showSecondHand: true,
+                                    numberColor: Colors.white,
+                                    showNumbers: true,
+                                    textScaleFactor: 2.0,
+                                    showAllNumbers: true,
+                                    showTicks: true,
+                                    showDigitalClock: true,
+                                    datetime: DateTime(2019, 1, 1, 9, 12, 15),),
+                                ),)
                               ],
                             ),
-
                             Container(height: 16.0),
                             Text(
                               'You have ${_todos.where((todo) => todo.isCompleted == 0).length} tasks to complete',
@@ -326,12 +349,6 @@ class TaskCard extends StatelessWidget {
               heroIds: heroIds,
             ),
           ),
-          // MaterialPageRoute(
-          //   builder: (context) => DetailScreen(
-          //         taskId: task.id,
-          //         heroIds: heroIds,
-          //       ),
-          // ),
         );
       },
       child: Card(

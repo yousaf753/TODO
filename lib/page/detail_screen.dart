@@ -39,33 +39,6 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
     _animation = Tween<Offset>(begin: Offset(0, 1.0), end: Offset(0.0, 0.0))
         .animate(_controller);
   }
-
-  // getContainer(bool isCompleted, {Widget child}) {
-  //   if (isCompleted) {
-  //     return Container(
-  //       padding: EdgeInsets.only(left: 22.0, right: 22.0),
-  //       decoration: BoxDecoration(
-  //         gradient: LinearGradient(
-  //           begin: Alignment.centerLeft,
-  //           end: Alignment.centerRight,
-  //           stops: [0.4, 0.6, 1],
-  //           colors: <Color>[
-  //             Colors.grey.shade100,
-  //             Colors.grey.shade50,
-  //             Colors.white,
-  //           ],
-  //         ),
-  //       ),
-  //       child: child,
-  //     );
-  //   } else {
-  //     return Container(
-  //       padding: EdgeInsets.only(left: 22.0, right: 22.0),
-  //       child: child,
-  //     );
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     _controller.forward();
