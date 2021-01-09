@@ -1,29 +1,20 @@
-
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'main.dart';
-
-
 void main() => runApp(loginScreen());
-
 class loginScreen extends StatelessWidget {
-
   loginScreen(){
     BuildContext context;
   }
-
-
   Color primaryColor = Colors.black87;
   Color secondaryColor = Colors.white;
   Color logoColor  =   Colors.redAccent;
-
   String email, password;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
   @override
   Widget build(context) {
     return MaterialApp(
@@ -33,12 +24,19 @@ class loginScreen extends StatelessWidget {
           body: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
+                    SizedBox(
+                      height: 100,
+                    ),
                    Container(
-                     margin: EdgeInsets.only(top: 200),
+                     decoration: BoxDecoration(),
+                     child: _buildFooterLogo(),
+                   ),
+                   Container(
+                     margin: EdgeInsets.only(top: 30),
                      child: Text('TODO' , style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),) ,
                    ),
                     SizedBox(
-                      height: 100,
+                      height: 50,
                     ),
                     Container(
 
@@ -74,7 +72,7 @@ class loginScreen extends StatelessWidget {
                                     cursorHeight:20,
                                   ),
                                   SizedBox(
-                                    height: 100,
+                                    height: 50,
                                   ),
                                   MaterialButton(
                                     elevation: 0,
@@ -115,7 +113,7 @@ class loginScreen extends StatelessWidget {
           ),
     );
   }
-  /*_buildFooterLogo() {
+  _buildFooterLogo() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -123,8 +121,9 @@ class loginScreen extends StatelessWidget {
         children: <Widget>[
           Image.asset(
             'images/logo.png',
-            height: 40,
-            color: Colors.white,
+            height: 150,
+            width: 150,
+            //: Colors.blue,
           ),
           SizedBox(
             width: 10,
@@ -132,30 +131,7 @@ class loginScreen extends StatelessWidget {
         ],
       ),
     );
-  }*/
-  /*_buildTextField(TextEditingController controller, IconData icon, String labelText) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      decoration: BoxDecoration(
-          color: secondaryColor, borderRadius: BorderRadius.circular(20),border: Border.all(color: Colors.blue)),
-      child: TextField(
-        controller: controller,
-        style: TextStyle(color: Colors.black87),
-        decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
-            labelText: labelText,
-            labelStyle: TextStyle(color: Colors.black87),
-            icon: Icon(
-              icon,
-              color: Colors.black87,
-            ),
-            // prefix: Icon(icon),
-            border: InputBorder.none),
-      ),
-    );
-
-
-  }*/
+  }
   void _getEmail(){
     email = nameController.text.toString();
   }

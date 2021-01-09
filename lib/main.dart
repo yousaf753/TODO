@@ -151,30 +151,26 @@ class _MyHomePageState extends State<MyHomePage>
                                     .copyWith(color: Colors.white),
                               ),
                             ),
-                            Text(
-                              '${DateTimeUtils.currentDate} ${DateTimeUtils.currentMonth}',
-                              style: Theme.of(context).textTheme.title.copyWith(
-                                  color: Colors.white.withOpacity(0.7)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  '${DateTimeUtils.currentDate} ${DateTimeUtils.currentMonth}',
+                                  style: Theme.of(context).textTheme.title.copyWith(
+                                      color: Colors.white.withOpacity(0.7)),
+                                ),
+
+
+                              ],
                             ),
+
                             Container(height: 16.0),
                             Text(
                               'You have ${_todos.where((todo) => todo.isCompleted == 0).length} tasks to complete',
+                              // ignore: deprecated_member_use
                               style: Theme.of(context).textTheme.body1.copyWith(
                                   color: Colors.white.withOpacity(0.7)),
                             ),
-                            Container(
-                              height: 16.0,
-                            )
-                            // Container(
-                            //   margin: EdgeInsets.only(top: 42.0),
-                            //   child: Text(
-                            //     'TODAY : FEBURARY 13, 2019',
-                            //     style: Theme.of(context)
-                            //         .textTheme
-                            //         .subtitle
-                            //         .copyWith(color: Colors.white.withOpacity(0.8)),
-                            //   ),
-                            // ),
                           ],
                         ),
                       ),
@@ -182,6 +178,7 @@ class _MyHomePageState extends State<MyHomePage>
                         key: _backdropKey,
                         flex: 1,
                         child: NotificationListener<ScrollNotification>(
+                          // ignore: missing_return
                           onNotification: (notification) {
                             if (notification is ScrollEndNotification) {
                               print(
