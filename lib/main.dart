@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-
 import 'package:todo/scopedmodel/todo_list_model.dart';
 import 'package:todo/gradient_background.dart';
 import 'package:todo/task_progress_indicator.dart';
@@ -14,9 +13,6 @@ import 'package:todo/page/detail_screen.dart';
 import 'package:todo/component/todo_badge.dart';
 import 'package:todo/page/privacy_policy.dart';
 import 'package:todo/model/data/choice_card.dart';
-
-
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
